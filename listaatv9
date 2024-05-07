@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maior Número de um Vetor</title>
+</head>
+<body>
+    <h2>Maior Número de um Vetor</h2>
+    <label for="vetor">Digite os números do vetor separados por vírgula:</label>
+    <input type="text" id="vetor">
+    <br>
+    <button onclick="encontrarMaiorNumero()">Encontrar Maior Número</button>
+    <div id="resultado"></div>
+
+    <script>
+        function encontrarMaiorNumero() {
+            var vetorString = document.getElementById("vetor").value;
+            var vetorArray = vetorString.split(",");
+
+           
+            var numeros = [];
+            for (var i = 0; i < vetorArray.length; i++) {
+                var numero = parseFloat(vetorArray[i].trim());
+                if (!isNaN(numero)) {
+                    numeros.push(numero);
+                }
+            }
+
+           
+            if (numeros.length > 0) {
+                var maiorNumero = numeros[0];
+                for (var i = 1; i < numeros.length; i++) {
+                    if (numeros[i] > maiorNumero) {
+                        maiorNumero = numeros[i];
+                    }
+                }
+                document.getElementById("resultado").textContent = "O maior número é: " + maiorNumero;
+            } else {
+                document.getElementById("resultado").textContent = "Por favor, insira pelo menos um número válido.";
+            }
+        }
+    </script>
+</body>
+</html>
