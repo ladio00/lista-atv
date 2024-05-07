@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma dos Elementos de uma Matriz</title>
+</head>
+<body>
+    <h2>Soma dos Elementos de uma Matriz</h2>
+    <label for="matriz">Digite os elementos da matriz separados por vírgula e espaços:</label>
+    <input type="text" id="matriz">
+    <br>
+    <button onclick="calcularSoma()">Calcular Soma</button>
+    <div id="resultado"></div>
+
+    <script>
+        function calcularSoma() {
+            var matrizString = document.getElementById("matriz").value;
+            var matrizArray = matrizString.split(",");
+
+         
+            var elementos = [];
+            for (var i = 0; i < matrizArray.length; i++) {
+                var numero = parseFloat(matrizArray[i].trim());
+                if (!isNaN(numero)) {
+                    elementos.push(numero);
+                }
+            }
+
+          
+            var soma = 0;
+            for (var i = 0; i < elementos.length; i++) {
+                soma += elementos[i];
+            }
+
+            var resultado = document.getElementById("resultado");
+            resultado.textContent = "A soma dos elementos da matriz é: " + soma;
+        }
+    </script>
+</body>
+</html>
