@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Variável</title>
+</head>
+<body>
+    <h2>Verificador de Variável</h2>
+    <label for="variavel">Digite o valor da variável:</label>
+    <input type="text" id="variavel">
+    <br>
+    <button onclick="verificarVariavel()">Verificar</button>
+    <div id="mensagem"></div>
+
+    <script>
+        function verificarVariavel() {
+            var variavel = document.getElementById("variavel").value;
+            var mensagem = document.getElementById("mensagem");
+            
+            if (variavel === "a") {
+                mensagem.textContent = "A";
+            } else if (variavel === "b") {
+                mensagem.textContent = "B";
+            } else {
+                mensagem.textContent = "Outra letra";
+            }
+        }
+    </script>
+</body>
+</html>
