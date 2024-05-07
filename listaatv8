@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu de Opções</title>
+</head>
+<body>
+    <h2>Menu de Opções</h2>
+    <label for="opcoes">Escolha uma opção:</label>
+    <select id="opcoes">
+        <option value="1">1. Opção 1</option>
+        <option value="2">2. Opção 2</option>
+        <option value="3">3. Opção 3</option>
+    </select>
+    <br>
+    <button onclick="exibirMensagem()">Confirmar</button>
+    <div id="mensagem"></div>
+
+    <script>
+        function exibirMensagem() {
+            var opcaoSelecionada = document.getElementById("opcoes").value;
+            var mensagem = document.getElementById("mensagem");
+
+            switch(opcaoSelecionada) {
+                case '1':
+                    mensagem.textContent = "Opção 1 escolhida";
+                    break;
+                case '2':
+                    mensagem.textContent = "Opção 2 escolhida";
+                    break;
+                case '3':
+                    mensagem.textContent = "Opção 3 escolhida";
+                    break;
+                default:
+                    mensagem.textContent = "Opção inválida";
+            }
+        }
+    </script>
+</body>
+</html>
