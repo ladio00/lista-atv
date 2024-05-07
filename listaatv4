@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo da Média de um Vetor</title>
+</head>
+<body>
+    <h2>Cálculo da Média de um Vetor</h2>
+    <label for="numeros">Digite os números separados por vírgula:</label>
+    <input type="text" id="numeros">
+    <br>
+    <button onclick="calcularMedia()">Calcular Média</button>
+    <div id="resultado"></div>
+
+    <script>
+        function calcularMedia() {
+            var numerosString = document.getElementById("numeros").value;
+            var numerosArray = numerosString.split(",");
+            var numeros = [];
+
+         
+            for (var i = 0; i < numerosArray.length; i++) {
+                var numero = parseFloat(numerosArray[i].trim());
+                if (!isNaN(numero)) {
+                    numeros.push(numero);
+                }
+            }
+
+        
+            var soma = 0;
+            for (var i = 0; i < numeros.length; i++) {
+                soma += numeros[i];
+            }
+            var media = soma / numeros.length;
+
+            var resultado = document.getElementById("resultado");
+            if (numeros.length === 0) {
+                resultado.textContent = "Por favor, insira pelo menos um número válido.";
+            } else {
+                resultado.textContent = "A média dos números é: " + media.toFixed(2);
+            }
+        }
+    </script>
+</body>
+</html>
